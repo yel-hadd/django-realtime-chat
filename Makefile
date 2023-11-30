@@ -21,8 +21,6 @@ migrate: venv
 
 makemigrations: venv
 	$(DJANGO_ADMIN) makemigrations
-	cd core && $(DJANGO_ADMIN) makemigrations
-	cd room && $(DJANGO_ADMIN) makemigrations
 
 createsuperuser: venv
 	$(DJANGO_ADMIN) createsuperuser
