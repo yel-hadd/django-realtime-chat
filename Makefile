@@ -5,20 +5,26 @@ PYTHON = python
 PIP = pip
 DJANGO_ADMIN = $(PYTHON) manage.py
 
-# Commands
-install:
-	$(PIP) install -r requirements.txt
 
-migrate:
+venv:
+	if [ ! -d "venv" ]; then \
+		$(PYTHON) -m venv venv; \
+		$(PIP) install -r requirements.txt; \
+	fi
+
+clean-venv:
+	rm -rf venv
+
+migrate: venv
 	$(DJANGO_ADMIN) migrate
 
-makemigrations:
+makemigrations: venv
 	$(DJANGO_ADMIN) makemigrations
 
-createsuperuser:
+createsuperuser: venv
 	$(DJANGO_ADMIN) createsuperuser
 
-runserver:
+runserver: venv
 	$(DJANGO_ADMIN) runserver
 
 # test:
