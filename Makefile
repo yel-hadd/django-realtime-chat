@@ -1,7 +1,7 @@
 # Makefile for Realtime Chat App
 
 # Variables
-PYTHON = python
+PYTHON = venv/bin/python
 PIP = pip
 DJANGO_ADMIN = $(PYTHON) manage.py
 

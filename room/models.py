@@ -22,4 +22,4 @@ class Message(models.Model):
         ordering = ("date_added",)
 
     def __str__(self):
-        return self.message
+        return self.content
