@@ -5,7 +5,11 @@ from django.shortcuts import render, redirect
 
 
 def frontpage(request):
-    return render(request, "core/frontpage.html")
+    # if user is logged in, redirect to rooms page
+    if request.user.is_authenticated:
+        return redirect("rooms")
+    else:
+        return render(request, "core/frontpage.html")
 
 
 def register(request):
