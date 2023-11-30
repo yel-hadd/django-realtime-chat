@@ -2,7 +2,7 @@
 
 # Variables
 PYTHON = venv/bin/python
-PIP = pip
+PIP = venv/bin/pip
 DJANGO_ADMIN = $(PYTHON) manage.py
 
 
