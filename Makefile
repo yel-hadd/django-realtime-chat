@@ -16,13 +16,13 @@ venv:
 clean-venv:
 	rm -rf venv
 
-migrate: venv
+migrate: venv makemigrations
 	$(DJANGO_ADMIN) migrate
 
 makemigrations: venv
 	$(DJANGO_ADMIN) makemigrations
 
-createsuperuser: venv
+admin: venv
 	$(DJANGO_ADMIN) createsuperuser
 
 runserver: venv

@@ -27,7 +27,7 @@ make migrate
 Create a superuser to access the admin panel at `/admin`:
 
 ```
-make createsuperuser
+make admin
 ```
 
 ### Run Development Server
