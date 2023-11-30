@@ -1,0 +1,83 @@
+{% extends "core/base.html" %}
+{% block title %} Register | {% endblock %}
+
+{% block content %}
+<div class="p-4 lg:p-6 text-center">
+    <h1 class="text-2xl lg:text-4xl font-bold text-gray-900 mt-8">Register</h1>
+</div>
+<form method="post" action="." class="max-w-md mx-auto px-4">
+    {% csrf_token %}
+
+    <div class="mb-5">
+        <div class="mb-4">
+            <label for="username" class="block mb-2 text-sm font-bold text-gray-700">Username</label>
+            <input type="text" name="username" id="username" class="border border-gray-400 p-2 w-full rounded" required>
+            {% if form.username.errors %}
+            <p class="text-red-500 text-xs italic mt-2">
+                {% for error in form.username.errors %}
+                {{ error }}
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if form.username.help_text %}
+            <p class="text-gray-600 text-xs italic mt-2">
+                {{ form.username.help_text }}
+            </p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block mb-2 text-sm font-bold text-gray-700">Email</label>
+            <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full rounded" required>
+            {% if form.email.errors %}
+            <p class="text-red-500 text-xs italic mt-2">
+                {% for error in form.email.errors %}
+                {{ error }}
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if form.email.help_text %}
+            <p class="text-gray-600 text-xs italic mt-2">
+                {{ form.email.help_text }}
+            </p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <label for="password1" class="block mb-2 text-sm font-bold text-gray-700">Password</label>
+            <input type="password" name="password1" id="password1" class="border border-gray-400 p-2 w-full rounded" required>
+            <!--display assist text-->
+            {% if form.password1.errors %}
+            <p class="text-red-500 text-xs italic mt-2">
+                {% for error in form.password1.errors %}
+                {{ error }}
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if form.password1.help_text %}
+            <p class="text-gray-600 text-xs italic mt-2">
+                {{ form.password1.help_text }}
+            </p>
+            {% endif %}
+        </div>
+        <div class="mb-4">
+            <label for="password2" class="block mb-2 text-sm font-bold text-gray-700">Confirm Password</label>
+            <input type="password" name="password2" id="password2" class="border border-gray-400 p-2 w-full rounded" required>
+            {% if form.password2.errors %}
+            <p class="text-red-500 text-xs italic mt-2">
+                {% for error in form.password2.errors %}
+                {{ error }}
+                {% endfor %}
+            </p>
+            {% endif %}
+            {% if form.password2.help_text %}
+            <p class="text-gray-600 text-xs italic mt-2">
+                {{ form.password2.help_text }}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="flex flex-col lg:flex-row items-center justify-between py-4">
+        <button class="bg-amber-400 hover:bg-amber-500 text-black font-bold py-2 px-4 rounded mb-4 lg:mb-0" type="submit">Register</button>
+        <a class="inline-block font-bold text-sm text-amber-600 hover:text-amber-700" href="/login">Already have an account?</a>
+    </div>
+</form>
+{% endblock %}
