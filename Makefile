@@ -5,6 +5,7 @@ PYTHON = venv/bin/python
 PIP = venv/bin/pip
 DJANGO_ADMIN = $(PYTHON) manage.py
 
+# venv -> makemigrations
 
 venv:
 	if [ ! -d "venv" ]; then \
