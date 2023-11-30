@@ -19,8 +19,8 @@ make venv
 Apply database migrations to sync the database schema:
 
 ```bash
-make migrate
 make makemigrations
+make migrate
 ```
 
 ### Create Superuser
