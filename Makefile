@@ -8,7 +8,7 @@ DJANGO_ADMIN = $(PYTHON) manage.py
 
 venv:
 	if [ ! -d "venv" ]; then \
-		$(PYTHON) -m venv venv; \
+		python3 -m venv venv; \
 		$(PIP) install -r requirements.txt; \
 	fi
 
