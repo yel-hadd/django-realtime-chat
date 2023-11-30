@@ -19,7 +19,6 @@ make venv
 Apply database migrations to sync the database schema:
 
 ```bash
-make makemigrations
 make migrate
 ```
 
